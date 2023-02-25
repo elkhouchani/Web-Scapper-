@@ -1,0 +1,17 @@
+# Java
+*.class
+
+# Maven
+target/
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+*.iml
+
+# Log files
+*.log
+
+# Properties files containing sensitive information
+application.properties
