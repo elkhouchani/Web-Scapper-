@@ -16,11 +16,20 @@ public class EtsyWebScraper {
 		Document Doc = Jsoup.connect(url).get();
 		System.out.println("Title: "+Doc.title());
 		
+		//Extract links
 		Elements links = Doc.select("a[href]");
 		
 		for(Element link: links) {
 			System.out.println("\nlink :"+link.attr("href"));
 			System.out.println("text: "+link.text());
+		}
+		
+		//Extract images
+		System.out.println(" ****** Getting all images ****** ");
+		
+		Elements imgs = Doc.getElementsByTag("img");
+		for(Element src: imgs) {
+			System.out.println(src.attr("abs:src"));
 		}
 	}
 
